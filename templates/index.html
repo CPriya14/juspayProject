@@ -1,0 +1,85 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Knowledge Base</title>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<style>
+h1 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+}
+</style>
+    <div class="container-fluid">
+        <header>
+        <div class="header">
+            <div class="row title">
+                <div class="col-md-9">
+                    <h1>Knowledge Base</h1>
+					   <h3>Teach or Learn</h3>
+                </div>
+            </div>
+        </div>
+        </header>
+		
+{% if msg %}
+    {{ msg }}
+  {% endif %}  
+  
+<button onclick="document.getElementById('id0').style.display='block'">Sign Up</button>
+
+<div id="id0" class="modal">
+  <span onclick="document.getElementById('id0').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content animate" action="/login"   autocomplete="on" method="POST">
+    <div class="container">
+	<label><b>Name</b></label>
+	<input type="text" placeholder="Enter name" name="name" required>
+	<label><b>Mobile No.</b></label>
+	<input type="text" placeholder="Enter no" name="no" required>
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input id="pwd1" type="password" placeholder="Enter Password" name="psw" required>
+
+	  <label>Can Teach:</label>
+	  <input type="text" placeholder="Techs You Know" name="teach" optional >
+	  <label>Want to Learn:</label>
+	  <input type="text" placeholder="Techs you want to Learn" name="learn" optional>
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id0').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<button onclick="document.getElementById('id1').style.display='block'">Login</button>
+
+<div id="id1" class="modal">
+  <span onclick="document.getElementById('id1').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form id="fm" class="modal-content animate" action="/user" method="POST" autocomplete="on" name="frm">
+    <div class="container">
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id1').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Login</button>
+      </div>
+    </div>
+  </form>
+</div>
+  
+</body>
+
+</html>
