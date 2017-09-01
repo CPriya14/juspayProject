@@ -2,7 +2,13 @@
 
 This project shows up a Responsive Web site where user can appy for learning or for teaching any course. User need to create account and then login user his/her respective account.
 
-#  Prerequisites: -Install Python 2.7 -Install Oracle Express 11g -Google API Key for google maps
+#  Prerequisites: 
+
+-Install Python 2.7 
+
+-Install Oracle Express 11g 
+
+-Google API Key for google maps
 
 #  Usage: 
 
